@@ -20,7 +20,7 @@ services:
     # command: "node ./src/server/index.js"
     command: "npm run dev"
     depends_on:
-    - mongo
+      - mongo
 
   mongo:
     build:
@@ -30,9 +30,9 @@ services:
     labels:
       - 'traefik.backend=hkm_mongo'
     ports:
-    - "27017:27017"
+      - "27017:27017"
     volumes:
-    - mongodata:/data/db
+      - mongodata:/data/db
 
   nginx:
     image: nginx
