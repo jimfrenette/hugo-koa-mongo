@@ -13,7 +13,7 @@ These products will need to be installed in order to complete this tutorial.
 
 
 #### Settings
-- Hugo `publishDir` is named `public` (default)
+- Hugo `publishDir` name = `public` (default)
 - Hugo website is in `www`
 
 ##### Create
