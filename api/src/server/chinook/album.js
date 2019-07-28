@@ -9,4 +9,6 @@ const AlbumSchema = new Schema({
     collection: 'Album'
 });
 
-module.exports = mongoose.model('Album', AlbumSchema);
+const chinook = mongoose.connection.useDb('chinook');
+
+module.exports = chinook.model('Album', AlbumSchema);

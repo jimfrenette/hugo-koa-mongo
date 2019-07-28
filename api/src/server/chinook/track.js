@@ -15,4 +15,6 @@ const TrackSchema = new Schema({
     collection: 'Track'
 });
 
-module.exports = mongoose.model('Track', TrackSchema);
+const chinook = mongoose.connection.useDb('chinook');
+
+module.exports = chinook.model('Track', TrackSchema);

@@ -18,4 +18,6 @@ const ArtistSchema = new Schema({
     collection: 'Artist'
 });
 
-module.exports = mongoose.model('Artist', ArtistSchema);
+const chinook = mongoose.connection.useDb('chinook');
+
+module.exports = chinook.model('Artist', ArtistSchema);

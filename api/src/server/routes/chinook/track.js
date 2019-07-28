@@ -1,9 +1,5 @@
 const Router = require('koa-router');
 
-const connect = require('../../chinook/connect');
-
-connect();
-
 const router = new Router();
 const BASE_URL = `/api/chinook`;
 
