@@ -7,18 +7,21 @@ const Schema = mongoose.Schema;
 
  by default, Mongoose produces a collection name by passing the model name to
  the utils.toCollectionName method.
- This method pluralizes the name Artist to Artists.
+ This method pluralizes the name Content to Contents.
  Set this option if you need a different name for your collection.
- e.g., `collection: 'Artist'`
+ e.g., `collection: 'Content'`
 */
 
-const ArtistSchema = new Schema({
-    ArtistId: Number,
-    Name: String
+const ContentSchema = new Schema({
+    content: String,
+    date: Date,
+    section: String,
+    summary: String,
+    tags: Array
 },{ 
-    collection: 'Artist'
+    collection: 'Content'
 });
 
-const chinook = mongoose.connection.useDb('chinook');
+const search = mongoose.connection.useDb('search');
 
-module.exports = chinook.model('Artist', ArtistSchema);
+module.exports = search.model('Content', ContentSchema);

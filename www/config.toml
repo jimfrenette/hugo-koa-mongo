@@ -1,4 +1,13 @@
-baseURL = "http://example.org/"
+baseURL = "http://localhost"
 languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "starter"
+
+[outputs]
+home = ["HTML", "RSS", "Search"]
+
+[outputFormats.Search]
+baseName = "search"
+isPlainText = true
+mediaType = "application/json"
+notAlternative = true

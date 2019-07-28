@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const indexRoutes = require('./routes/index');
 const artistRoutes = require('./routes/chinook/artist');
 const albumRoutes = require('./routes/chinook/album');
+const contentRoutes = require('./routes/search/content');
 const trackRoutes = require('./routes/chinook/track');
 
 /**
@@ -26,6 +27,7 @@ db.once('open', () => {
 app.use(indexRoutes.routes());
 app.use(artistRoutes.routes());
 app.use(albumRoutes.routes());
+app.use(contentRoutes.routes());
 app.use(trackRoutes.routes());
 
 module.exports = server;
