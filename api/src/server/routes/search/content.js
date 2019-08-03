@@ -6,6 +6,10 @@ const BASE_URL = `/api/search`;
 const Content = require('../../search/content');
 
 function getContent(phrase) {
+
+    // put quotes around search phrase
+    phrase = JSON.stringify(phrase);
+
     return new Promise((resolve, reject) => {
         var query = Content.find({ $text: { $search: phrase } });
         query.exec((err, results) => {
@@ -23,4 +27,4 @@ router.get(BASE_URL + '/content/:phrase', async (ctx) => {
     }
 })
 
-module.exports = router;
+module.exports = router;  
