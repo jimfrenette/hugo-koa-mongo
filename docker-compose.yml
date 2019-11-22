@@ -54,7 +54,7 @@ services:
       - ./www/public:/usr/share/nginx/html
 
   traefik:
-    image: traefik
+    image: traefik:v1.7
     container_name: "${DEV_PROJECT_NAME}_traefik"
     command: -c /dev/null --docker --logLevel=INFO
     ports:
