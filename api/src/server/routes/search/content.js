@@ -17,6 +17,7 @@ function getContent(phrase) {
             resolve(results);
         });
     });
+
 }
 
 router.get(BASE_URL + '/content/:phrase', async (ctx) => {

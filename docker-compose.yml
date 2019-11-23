@@ -17,8 +17,8 @@ services:
       - ./api/node_modules:/home/node/node_modules
     expose:
       - "1337"
-    # command: "node ./src/server/index.js"
     command: "npm run dev"
+    # command: "npm start"
     depends_on:
       - mongo
 

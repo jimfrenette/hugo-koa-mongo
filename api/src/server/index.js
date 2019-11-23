@@ -17,7 +17,7 @@ const server = app.listen(PORT, () => {
 /**
  * MongoDB connection */
 const connStr =  'mongodb://mongo:27017/default';
-mongoose.connect(connStr);
+mongoose.connect(connStr, {useNewUrlParser: true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
