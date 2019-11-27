@@ -9,8 +9,11 @@ function getArtists() {
     return new Promise((resolve, reject) => {
         var query = Artist.find();
         query.exec((err, results) => {
-            if (err) return handleError(err);
-            resolve(results);
+            if (err) {
+                resolve(err);
+            } else {
+                resolve(results);
+            }
         });
     });
 }

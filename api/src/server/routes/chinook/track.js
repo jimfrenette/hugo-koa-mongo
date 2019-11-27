@@ -9,8 +9,11 @@ function getTracks(album) {
     return new Promise((resolve, reject) => {
         var query = Track.find({ 'AlbumId': album });
         query.exec((err, results) => {
-            if (err) return handleError(err);
-            resolve(results);
+            if (err) {
+                resolve(err);
+            } else {
+                resolve(results);
+            }
         });
     });
 }

@@ -9,8 +9,11 @@ function getAlbums(artist) {
     return new Promise((resolve, reject) => {
         var query = Album.find({ 'ArtistId': artist });
         query.exec((err, results) => {
-            if (err) return handleError(err);
-            resolve(results);
+            if (err) {
+                resolve(err);
+            } else {
+                resolve(results);
+            }
         });
     });
 }
